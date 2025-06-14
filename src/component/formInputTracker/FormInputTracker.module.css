@@ -1,0 +1,130 @@
+/* ========== Theme Styles ========== */
+.light {
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  color: #222;
+}
+
+.dark {
+  background-color: #2c2c2c;
+  border: 1px solid #444;
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.1);
+  color: #f5f5f5;
+}
+
+/* ========== Container ========== */
+.formContainer {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 20px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ========== Form Layout ========== */
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ========== Input Groups ========== */
+.nameInput,
+.emailInput,
+.passwordContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+label {
+  font-weight: 500;
+}
+
+/* ========== Inputs ========== */
+input {
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+  border: 1px solid currentColor;
+  font-size: 1rem;
+  background-color: transparent;
+  color: inherit;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: #4caf50;
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.3);
+}
+
+/* ========== Validation Colors ========== */
+.green {
+  border-color: #4caf50 !important;
+}
+
+.red {
+  border-color: #f44336 !important;
+}
+
+.errorMessage {
+  color: #f44336;
+  font-size: 0.85rem;
+}
+
+/* ========== Password Toggle ========== */
+.passwordToggle {
+  align-self: flex-end;
+  margin-top: -2rem;
+  margin-right: 0.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: transform 0.2s ease;
+}
+.passwordToggle:active {
+  transform: scale(0.9);
+}
+
+/* ========== Submit Button ========== */
+.submitButton {
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+.submitButton:disabled {
+  background-color: #b2dfdb;
+  cursor: not-allowed;
+}
+.submitButton:not(:disabled):hover {
+  background-color: #388e3c;
+}
+.submitButton:active {
+  transform: scale(0.96);
+}
+
+/* ========== Character Count & Messages ========== */
+.nameInput p,
+.emailInput p,
+.passwordContainer p {
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 480px) {
+  .formContainer {
+    padding: 1rem;
+  }
+  .passwordToggle {
+    margin-top: -1.8rem;
+  }
+}
+/* Wraps input + toggle button */
