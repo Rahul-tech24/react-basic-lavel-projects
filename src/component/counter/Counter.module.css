@@ -185,3 +185,37 @@ button:active {
     padding: 0.4rem 1rem;
   }
 }
+.greeting {
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: inherit;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Optional emphasis */
+.greeting span {
+  font-weight: 700;
+  color: #4caf50; /* or #66b2ff for dark mode */
+}
+
+/* Simple fade+rise animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Optional responsiveness */
+@media (max-width: 480px) {
+  .greeting {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+}

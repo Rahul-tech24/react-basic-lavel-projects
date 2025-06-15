@@ -3,8 +3,7 @@ import styles from './FormInputTracker.module.css'
 
 
 function FormInputTracker({onSuccess, theme}) {
-
-    const [name, setName] = useState('');
+  const [name, setName] = useState('');
     const [email, setEmail ] = useState('');
     const [password, setPassword] = useState('');
     const [errors, setErrors] = useState({});
@@ -40,7 +39,7 @@ function FormInputTracker({onSuccess, theme}) {
             setName('');
             setEmail('');
             setPassword('');
-            onSuccess();
+            onSuccess(name);
         }
     }
 

@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import styles from './Counter.module.css';
 
-function Counter({ theme }) {
+function Counter({ theme, name }) {
+  
   const [count, setCount] = useState(() => +localStorage.getItem("count") || 0);
   const [step, setStep] = useState(() => +localStorage.getItem("step") || 1);
   const [history, setHistory] = useState(() => {
@@ -54,6 +55,7 @@ function Counter({ theme }) {
 
   return (
     <div className={`${styles.counter} ${theme === 'dark' ? styles.dark : styles.light}`}>
+      <h2 className={styles.greeting}>Hello, {name} 💪</h2>
       <div className={styles.change}>
         <button className={styles.increment} onClick={handleIncrement} disabled={count + step > 30}>Increment</button>
         {count === 30 && <p>You cannot go beyond limit 30</p>}

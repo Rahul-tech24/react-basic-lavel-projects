@@ -5,8 +5,8 @@ import ThemeToggle from './component/ThemeToggle/ThemeToggle'
 import FormInputTracker from './component/formInputTracker/FormInputTracker'
 
 function App() {
+    const [username, setUsername] = useState(null);
 
-   const [formSubmitted, setFormSubmitted] = useState(false);
    const [theme, setTheme] = useState(() => {
               const savedTheme = localStorage.getItem("theme");
               const systemPrefersDark = window?.matchMedia?.("(prefers-color-scheme: dark)")?.matches;
@@ -21,8 +21,9 @@ function App() {
   
   return (
     <div>
+  
       <ThemeToggle theme={theme} setTheme={setTheme} />
-      {!formSubmitted ? <FormInputTracker onSuccess={() => setFormSubmitted(true)} theme={theme} /> : <Counter theme={theme} />}
+      {!username ? <FormInputTracker onSuccess={(name) => setUsername(name)}  theme={theme} /> : <Counter theme={theme}  name={username} />}
     </div>
   );
 }
