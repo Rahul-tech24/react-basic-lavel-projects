@@ -3,6 +3,8 @@ import Counter from './component/counter/Counter'
 import './App.css'
 import ThemeToggle from './component/ThemeToggle/ThemeToggle'
 import FormInputTracker from './component/formInputTracker/FormInputTracker'
+import DigitalClock from './component/DigitalClock/DigitalClock'
+import Pomodoro from './component/PomodoroTimer/PomodoroTimer'
 
 function App() {
     const [username, setUsername] = useState(null);
@@ -23,8 +25,11 @@ function App() {
     <div>
   
       <ThemeToggle theme={theme} setTheme={setTheme} />
-      {!username ? <FormInputTracker onSuccess={(name) => setUsername(name)}  theme={theme} /> : <Counter theme={theme}  name={username} />}
+      {!username ? <FormInputTracker onSuccess={(name) => setUsername(name)} theme={theme} /> : <Counter theme={theme} name={username} />}
+      <DigitalClock theme={theme} />
+      <Pomodoro theme = {theme} />
     </div>
+    
   );
 }
 
